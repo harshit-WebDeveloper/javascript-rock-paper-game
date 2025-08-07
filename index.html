@@ -5,15 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors Game</title>
   </head>
+  <style>
+    * {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    button {
+      font-size: 25px;
+      padding: 10px;
+      border-radius: 12px;
+    }
+    button.btn {
+      height: 20vh;
+      width: 10vw;
+      padding: 12px;
+      background-color: transparent;
+      border: 1.5px solid black;
+      border-radius: 20px;
+      margin-right: 15px;
+    }
+    button.btn img {
+      width: 95%;
+    }
+    h2 {
+      font-size: 30px;
+    }
+    h3 {
+      font-size: 23px;
+    }
+    p {
+      font-size: 22px;
+    }
+  </style>
   <body>
-    <h2>Rock Paper Scissors</h2>
-    <button onclick="playgame('Rock');">Rock</button>
-    <button onclick="playgame('Paper');">Paper</button>
-    <button onclick="playgame('Scissors');">Scissors</button>
-    <button onclick="resetgame();">Reset Score</button>
+    <h2>Rock Paper Scissors Game</h2>
+    <button onclick="playgame('Rock');" class="btn" title="Rock">
+      <img src="images/rock-emoji.png" />
+    </button>
+    <button onclick="playgame('Paper');" class="btn" title="Paper">
+      <img src="images/paper-emoji.png" />
+    </button>
+    <button onclick="playgame('Scissors');" class="btn" title="Scissors">
+      <img src="images/scissors-emoji.png" />
+    </button>
     <h3 class="moves"></h3>
     <h3 class="result"></h3>
     <p></p>
+    <button onclick="resetgame();">Reset Score</button>
     <script>
       let score = JSON.parse(localStorage.getItem("score")) || {
         gametie: 0,
