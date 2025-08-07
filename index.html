@@ -81,12 +81,16 @@
         score.gametie = 0;
         score.compwin = 0;
         score.userwin = 0;
+        localStorage.setItem("score", JSON.stringify(score));
         document.querySelector(".moves").innerHTML = "";
         document.querySelector(".result").innerHTML = "Scores get Reset";
         document.querySelector(
           "p"
         ).innerHTML = `Game Tie: ${score.gametie} User Win: ${score.userwin} Computer Win: ${score.compwin}`;
       }
+      document.querySelector(
+        "p"
+      ).innerHTML = `Game Tie: ${score.gametie} User Win: ${score.userwin} Computer Win: ${score.compwin}`;
     </script>
   </body>
 </html>
