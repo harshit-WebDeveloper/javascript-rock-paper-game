@@ -11,8 +11,8 @@
     <button onclick="playgame('Paper');">Paper</button>
     <button onclick="playgame('Scissors');">Scissors</button>
     <button onclick="resetgame();">Reset Score</button>
-    <h4></h4>
-    <h3></h3>
+    <h3 class="moves"></h3>
+    <h3 class="result"></h3>
     <p></p>
     <script>
       let score = JSON.parse(localStorage.getItem("score")) || {
@@ -33,42 +33,42 @@
       function playgame(userMove) {
         let compMove = getcompMove();
         document.querySelector(
-          "h4"
+          ".moves"
         ).innerHTML = `Your Move is ${userMove} and Computer Move is ${compMove}`;
         game(userMove, compMove);
       }
       function game(userMove, compMove) {
         if (userMove === "Rock") {
           if (compMove === "Rock") {
-            document.querySelector("h3").innerHTML = "Game Tie";
+            document.querySelector(".result").innerHTML = "Game Tie";
             score.gametie += 1;
           } else if (compMove === "Scissors") {
-            document.querySelector("h3").innerHTML = "User Win";
+            document.querySelector(".result").innerHTML = "User Win";
             score.userwin += 1;
           } else {
-            document.querySelector("h3").innerHTML = "Computer Win";
+            document.querySelector(".result").innerHTML = "Computer Win";
             score.compwin += 1;
           }
         } else if (userMove === "Paper") {
           if (compMove === "Paper") {
-            document.querySelector("h3").innerHTML = "Game Tie";
+            document.querySelector(".result").innerHTML = "Game Tie";
             score.gametie += 1;
           } else if (compMove === "Rock") {
-            document.querySelector("h3").innerHTML = "User Win";
+            document.querySelector(".result").innerHTML = "User Win";
             score.userwin += 1;
           } else {
-            document.querySelector("h3").innerHTML = "Computer Win";
+            document.querySelector(".result").innerHTML = "Computer Win";
             score.compwin += 1;
           }
         } else {
           if (compMove === "Scissors") {
-            document.querySelector("h3").innerHTML = "Game Tie";
+            document.querySelector(".result").innerHTML = "Game Tie";
             score.gametie += 1;
           } else if (compMove === "Paper") {
-            document.querySelector("h3").innerHTML = "User Win";
+            document.querySelector(".result").innerHTML = "User Win";
             score.userwin += 1;
           } else {
-            document.querySelector("h3").innerHTML = "Computer Win";
+            document.querySelector(".result").innerHTML = "Computer Win";
             score.compwin += 1;
           }
         }
@@ -81,8 +81,8 @@
         score.gametie = 0;
         score.compwin = 0;
         score.userwin = 0;
-        document.querySelector("h4").innerHTML = "";
-        document.querySelector("h3").innerHTML = "Scores get Reset";
+        document.querySelector(".moves").innerHTML = "";
+        document.querySelector(".result").innerHTML = "Scores get Reset";
         document.querySelector(
           "p"
         ).innerHTML = `Game Tie: ${score.gametie} User Win: ${score.userwin} Computer Win: ${score.compwin}`;
