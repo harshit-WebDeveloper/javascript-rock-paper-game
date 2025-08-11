@@ -8,19 +8,20 @@
   </head>
   <body>
     <h2>Rock Paper Scissors Game</h2>
-    <button onclick="playgame('Rock');" class="btn" title="Rock">
+    <button class="btn js-btn-rock" title="Rock">
       <img src="images/rock-emoji.png" />
     </button>
-    <button onclick="playgame('Paper');" class="btn" title="Paper">
+    <button class="btn js-btn-paper" title="Paper">
       <img src="images/paper-emoji.png" />
     </button>
-    <button onclick="playgame('Scissors');" class="btn" title="Scissors">
+    <button class="btn js-btn-scissors" title="Scissors">
       <img src="images/scissors-emoji.png" />
     </button>
     <h3 class="moves"></h3>
     <h3 class="result"></h3>
     <p></p>
-    <button onclick="resetgame();">Reset Score</button>
+    <button class="reset-game">Reset Score</button>
+    <button class="auto-play">Auto Play</button>
     <script src="logic.js"></script>
   </body>
 </html>
